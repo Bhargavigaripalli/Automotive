@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="images/stackly-logo.webp">
+    <title>Services - STACKLY AUTO</title>
+    <!-- Bootstrap 5.3.3 CSS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Supercharged Automotive Animations CSS -->
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- Three.js Background Container -->
+    <div id="three-canvas-container"></div>
+
+    <!-- Section 1: Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light glass-nav fixed-top shadow-sm" style="z-index: 1030; padding: 12px 0;">
+    <div class="container">
+        <!-- Left: Logo -->
+        <a class="navbar-brand logo d-flex align-items-center text-decoration-none" href="index.html" id="nav-brand-logo" aria-label="Stackly Home">
+            <img class="logo-img" src="images/stackly-logo.webp" alt="Stackly Logo">
+        </a>
+
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler border-0 shadow-none d-lg-none ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="outline: none;">
+            <i class="fas fa-bars fs-4" style="color: var(--primary-color);"></i>
+        </button>
+
+        <!-- Center: Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto align-items-center gap-1 gap-lg-3 my-3 my-lg-0">
+                <li class="nav-item"><a class="nav-link fw-bold px-2" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold px-2" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold px-2" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold px-2" href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold px-2" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold px-2" href="contact.html">Contact</a></li>
+                <li class="nav-item d-md-none w-100 mt-2"><a class="btn btn-custom-outline w-100 rounded-pill py-2" href="login.html">Login</a></li>
+            </ul>
+        </div>
+        
+        <!-- Right: Action Controls -->
+        <div class="d-none d-md-flex align-items-center gap-2">
+
+            <!-- Login -->
+            <a href="login.html" class="btn btn-custom-secondary rounded-pill px-3 py-2 fw-bold" style="font-size: 0.85rem;">
+                <i class="fas fa-user-circle me-1"></i> Login
+            </a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Section 2: Hero Section -->
+    <section class="pt-5 mt-5 page-hero d-flex align-items-center position-relative" style="min-height: 80vh;">
+        <div class="page-hero-bg position-absolute w-100 h-100" style="top: 0; left: 0; background-image: url('assets/images/img_35.webp'); background-size: cover; background-position: center;"></div>
+        <div class="hero-overlay position-absolute w-100 h-100" style="top: 0; left: 0; background: linear-gradient(to bottom, rgba(10, 15, 25, 0.8) 0%, rgba(10, 15, 25, 0.4) 100%);"></div>
+        <div class="container hero-content text-center position-relative" style="z-index: 2;">
+            <span class="badge rounded-pill px-3 py-2 shadow-sm mb-3" style="background-color: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); letter-spacing: 1px; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">OUR EXPERTISE</span>
+            <h1 class="hero-title fw-bold mb-3 mx-auto text-white" style="text-shadow: 0 4px 20px rgba(0,0,0,0.8); font-size: clamp(2.2rem, 8vw, 4.5rem); line-height: 1.2; max-width: 800px;">
+                <span style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">Our</span> <span class="text-gradient" style="-webkit-text-fill-color: transparent !important;">Services</span>
+            </h1>
+            <p class="hero-subtitle text-white mx-auto mb-5" style="text-shadow: 0 2px 10px rgba(0,0,0,0.8); -webkit-text-fill-color: #ffffff !important; opacity: 1 !important; font-size: clamp(1rem, 4vw, 1.25rem); max-width: 700px; line-height: 1.6;" data-aos="fade-up" data-aos-delay="300">
+                Comprehensive, high-tech care for all makes and models.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 3: Detailed Services Grid -->
+    <section class="py-5 bg-light position-relative">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;" data-aos="fade-up">
+                <span class="badge rounded-pill px-3 py-2 shadow-sm mb-3 text-uppercase fw-bold" style="background-color: rgba(37, 99, 235, 0.1); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); letter-spacing: 1px;">WHAT WE OFFER</span>
+                <h2 class="display-5 fw-bold mb-3" style="font-size: clamp(2rem, 5vw, 3rem);">Automotive <span class="text-gradient">Solutions</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-hover bg-white h-100 p-4 rounded-4 shadow-sm border text-center" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-oil-can fa-2x text-gradient"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 h5">Fluid & Filters</h4>
+                        <p class="text-muted mb-4 small">High-performance synthetic oils and OEM filters for peak engine longevity. Full transmission flushes and coolant exchanges.</p>
+                        <a href="404.html" class="text-gradient fw-bold text-decoration-none small">Book Service <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-hover bg-white h-100 p-4 rounded-4 shadow-sm border text-center" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-car-battery fa-2x text-gradient"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 h5">EV & Hybrid Care</h4>
+                        <p class="text-muted mb-4 small">Specialized diagnostics and battery maintenance for electric and hybrid vehicles, ensuring optimal range and battery health.</p>
+                        <a href="404.html" class="text-gradient fw-bold text-decoration-none small">Book Service <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card-hover bg-white h-100 p-4 rounded-4 shadow-sm border text-center" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-tools fa-2x text-gradient"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 h5">Engine Diagnostics</h4>
+                        <p class="text-muted mb-4 small">AI-assisted scanning to pinpoint complex engine codes instantly, taking the guesswork out of engine repair.</p>
+                        <a href="404.html" class="text-gradient fw-bold text-decoration-none small">Book Service <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card-hover bg-white h-100 p-4 rounded-4 shadow-sm border text-center" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-compact-disc fa-2x text-gradient"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 h5">Brake Systems</h4>
+                        <p class="text-muted mb-4 small">Pad replacement, rotor resurfacing, and high-performance brake upgrades. Complete ABS system testing and fluid bleeding.</p>
+                        <a href="404.html" class="text-gradient fw-bold text-decoration-none small">Book Service <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card-hover bg-white h-100 p-4 rounded-4 shadow-sm border text-center" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-snowflake fa-2x text-gradient"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 h5">A/C & Heating</h4>
+                        <p class="text-muted mb-4 small">Climate control system recharges, leak testing, and compressor repair to keep your cabin comfortable year-round.</p>
+                        <a href="404.html" class="text-gradient fw-bold text-decoration-none small">Book Service <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-card-hover bg-white h-100 p-4 rounded-4 shadow-sm border text-center" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-cogs fa-2x text-gradient"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 h5">Custom Tuning</h4>
+                        <p class="text-muted mb-4 small">ECU remaps, exhaust systems, and suspension modifications to extract the maximum performance from your vehicle.</p>
+                        <a href="404.html" class="text-gradient fw-bold text-decoration-none small">Book Service <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Maintenance Packages -->
+    <section class="py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); border-radius: 30px; margin-left: 15px; margin-right: 15px;">
+        <!-- Background decor -->
+        <div class="position-absolute w-100 h-100 top-0 start-0" style="background-image: radial-gradient(circle at 50% 0%, rgba(37,99,235,0.2) 0%, transparent 60%); z-index: 0;"></div>
+
+        <div class="container position-relative py-4" style="z-index: 1;">
+            <div class="text-center mx-auto mb-5" data-aos="fade-up">
+                <span class="badge rounded-pill px-3 py-2 shadow-sm mb-3 text-uppercase fw-bold" style="background-color: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); letter-spacing: 1px; backdrop-filter: blur(5px);">BUNDLE & SAVE</span>
+                <h2 class="display-5 fw-bold mb-3 text-white" style="font-size: clamp(2rem, 5vw, 3rem); color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">Maintenance <span style="color: #60a5fa !important; -webkit-text-fill-color: #60a5fa !important;">Packages</span></h2>
+            </div>
+            
+            <div class="row justify-content-center g-4">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="bg-white bg-opacity-10 h-100 p-4 p-lg-5 rounded-4 border position-relative overflow-hidden shadow-lg" style="border-color: rgba(255,255,255,0.1) !important; backdrop-filter: blur(10px);">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="fw-bold mb-0 text-white" style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">Pre-Winter Prep</h4>
+                            <span class="badge bg-primary text-uppercase" style="letter-spacing: 1px;">Seasonal</span>
+                        </div>
+                        <p class="mb-4 small" style="color: rgba(255,255,255,0.7) !important; -webkit-text-fill-color: rgba(255,255,255,0.7) !important; line-height: 1.6;">Ensure your car is ready for freezing temperatures and slick roads.</p>
+                        <ul class="list-unstyled mb-4 small" style="color: rgba(255,255,255,0.85) !important; -webkit-text-fill-color: rgba(255,255,255,0.85) !important;">
+                            <li class="mb-3 d-flex align-items-center"><div class="bg-primary rounded-circle p-1 me-3 d-flex align-items-center justify-content-center" style="width: 24px; height: 24px;"><i class="fas fa-check text-white" style="font-size: 10px;"></i></div> Battery load testing</li>
+                            <li class="mb-3 d-flex align-items-center"><div class="bg-primary rounded-circle p-1 me-3 d-flex align-items-center justify-content-center" style="width: 24px; height: 24px;"><i class="fas fa-check text-white" style="font-size: 10px;"></i></div> Antifreeze check/flush</li>
+                            <li class="mb-3 d-flex align-items-center"><div class="bg-primary rounded-circle p-1 me-3 d-flex align-items-center justify-content-center" style="width: 24px; height: 24px;"><i class="fas fa-check text-white" style="font-size: 10px;"></i></div> Winter tire installation</li>
+                        </ul>
+                        <h3 class="mb-4 fw-bold" style="color: #93c5fd !important; -webkit-text-fill-color: #93c5fd !important;">$149</h3>
+                        <a href="404.html" class="btn btn-custom-outline w-100 rounded-pill py-2 fw-bold" style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Select Package</a>
+                    </div>
+                </div>
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div class="bg-white bg-opacity-10 h-100 p-4 p-lg-5 rounded-4 border position-relative overflow-hidden shadow-lg" style="border-color: rgba(59,130,246,0.5) !important; backdrop-filter: blur(10px);">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="fw-bold mb-0 text-white" style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">Track Day Ready</h4>
+                            <span class="badge bg-light text-primary text-uppercase" style="letter-spacing: 1px;">Performance</span>
+                        </div>
+                        <p class="mb-4 small" style="color: rgba(255,255,255,0.7) !important; -webkit-text-fill-color: rgba(255,255,255,0.7) !important; line-height: 1.6;">Full inspection and fluid flush for high-performance track driving.</p>
+                        <ul class="list-unstyled mb-4 small" style="color: rgba(255,255,255,0.85) !important; -webkit-text-fill-color: rgba(255,255,255,0.85) !important;">
+                            <li class="mb-3 d-flex align-items-center"><div class="bg-primary rounded-circle p-1 me-3 d-flex align-items-center justify-content-center" style="width: 24px; height: 24px;"><i class="fas fa-check text-white" style="font-size: 10px;"></i></div> High-temp brake fluid flush</li>
+                            <li class="mb-3 d-flex align-items-center"><div class="bg-primary rounded-circle p-1 me-3 d-flex align-items-center justify-content-center" style="width: 24px; height: 24px;"><i class="fas fa-check text-white" style="font-size: 10px;"></i></div> Suspension geometry check</li>
+                            <li class="mb-3 d-flex align-items-center"><div class="bg-primary rounded-circle p-1 me-3 d-flex align-items-center justify-content-center" style="width: 24px; height: 24px;"><i class="fas fa-check text-white" style="font-size: 10px;"></i></div> Engine timing & dyno run</li>
+                        </ul>
+                        <h3 class="mb-4 fw-bold" style="color: #93c5fd !important; -webkit-text-fill-color: #93c5fd !important;">$399</h3>
+                        <a href="404.html" class="btn btn-custom-secondary w-100 rounded-pill py-2 fw-bold" style="color: var(--primary-color) !important; -webkit-text-fill-color: var(--primary-color) !important; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Select Package</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Tech Used -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="position-relative">
+                        <div class="position-absolute d-none d-md-block" style="top: -30px; left: -30px; width: 150px; height: 150px; background: radial-gradient(var(--primary-color) 2px, transparent 2px); background-size: 15px 15px; z-index: 0; opacity: 0.3;"></div>
+                        <img loading="lazy" decoding="async" src="assets/images/img_36.webp" class="img-fluid rounded-4 shadow-lg w-100 position-relative" style="border: 4px solid #fff; z-index: 1;" alt="Diagnostics Tech">
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                    <span class="badge rounded-pill px-3 py-2 shadow-sm mb-3 text-uppercase fw-bold" style="background-color: rgba(37, 99, 235, 0.1); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); letter-spacing: 1px;">OUR ARSENAL</span>
+                    <h2 class="display-5 fw-bold mb-4" style="font-size: clamp(2rem, 5vw, 3rem);">Advanced Diagnostic <span class="text-gradient">Technology</span></h2>
+                    <p class="text-muted mb-4 fs-5" style="line-height: 1.7;">We do not guess. We measure, analyze, and repair using OEM-level software and proprietary OBD-II scanners connected directly to our cloud servers.</p>
+                    
+                    <div class="d-flex mb-4 bg-white p-3 rounded-4 shadow-sm border" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle me-4 flex-shrink-0" style="width: 60px; height: 60px;">
+                            <i class="fas fa-laptop-code fs-4 text-gradient"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Cloud-Sync Diagnostics</h5>
+                            <p class="text-muted small mb-0">Your car's data is synced in real-time, allowing our master techs to view historical codes and performance data.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex bg-white p-3 rounded-4 shadow-sm border" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle me-4 flex-shrink-0" style="width: 60px; height: 60px;">
+                            <i class="fas fa-robot fs-4 text-gradient"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1">AI Predictive Maintenance</h5>
+                            <p class="text-muted small mb-0">Our algorithm predicts part failures before they happen, saving you from unexpected breakdowns.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Why Us -->
+    <section class="py-5 bg-light position-relative">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;" data-aos="fade-up">
+                <span class="badge rounded-pill px-3 py-2 shadow-sm mb-3 text-uppercase fw-bold" style="background-color: rgba(37, 99, 235, 0.1); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); letter-spacing: 1px;">OUR GUARANTEE</span>
+                <h2 class="display-5 fw-bold mb-3" style="font-size: clamp(2rem, 5vw, 3rem);">Why Choose <span class="text-gradient">STACKLY AUTO Services?</span></h2>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-hover glass-panel h-100 p-4 p-lg-5 position-relative overflow-hidden text-center" style="border-radius: 24px;">
+                        <i class="fas fa-shield-alt position-absolute opacity-10 bg-watermark-icon" style="font-size: 8rem; right: -20px; bottom: -20px; color: var(--primary-color); z-index: 0;"></i>
+                        <div class="position-relative" style="z-index: 1;">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-4 shadow-sm" style="width: 70px; height: 70px;">
+                                <i class="fas fa-shield-alt fa-2x text-gradient"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">2-Year Warranty</h4>
+                            <p class="text-muted mb-0 small">All parts and labor are fully covered.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-hover glass-panel h-100 p-4 p-lg-5 position-relative overflow-hidden text-center" style="border-radius: 24px;">
+                        <i class="fas fa-clock position-absolute opacity-10 bg-watermark-icon" style="font-size: 8rem; right: -20px; bottom: -20px; color: var(--primary-color); z-index: 0;"></i>
+                        <div class="position-relative" style="z-index: 1;">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-4 shadow-sm" style="width: 70px; height: 70px;">
+                                <i class="fas fa-clock fa-2x text-gradient"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">On-Time Delivery</h4>
+                            <p class="text-muted mb-0 small">We respect your time. Guaranteed completion slots.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card-hover glass-panel h-100 p-4 p-lg-5 position-relative overflow-hidden text-center" style="border-radius: 24px;">
+                        <i class="fas fa-mobile-alt position-absolute opacity-10 bg-watermark-icon" style="font-size: 8rem; right: -20px; bottom: -20px; color: var(--primary-color); z-index: 0;"></i>
+                        <div class="position-relative" style="z-index: 1;">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-4 shadow-sm" style="width: 70px; height: 70px;">
+                                <i class="fas fa-mobile-alt fa-2x text-gradient"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Digital Approvals</h4>
+                            <p class="text-muted mb-0 small">Approve repairs instantly via your smartphone.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Process -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" data-aos="fade-up">
+                <span class="badge rounded-pill px-3 py-2 shadow-sm mb-3 text-uppercase fw-bold" style="background-color: rgba(37, 99, 235, 0.1); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); letter-spacing: 1px;">WORKFLOW</span>
+                <h2 class="display-5 fw-bold mb-3" style="font-size: clamp(2rem, 5vw, 3rem);">The STACKLY AUTO <span class="text-gradient">Process</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-hover bg-white h-100 p-4 rounded-4 shadow-sm border text-center" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-4 text-white shadow-sm" style="width: 60px; height: 60px; font-size: 24px; font-weight: bold;">
+                            1
+                        </div>
+                        <h4 class="fw-bold mb-2 h5">Schedule</h4>
+                        <p class="text-muted mb-0 small">Book a slot online or via our app.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-hover bg-white h-100 p-4 rounded-4 shadow-sm border text-center" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-4 text-white shadow-sm" style="width: 60px; height: 60px; font-size: 24px; font-weight: bold;">
+                            2
+                        </div>
+                        <h4 class="fw-bold mb-2 h5">Drop Off</h4>
+                        <p class="text-muted mb-0 small">Hand us the keys or use our valet service.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card-hover bg-white h-100 p-4 rounded-4 shadow-sm border text-center" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-4 text-white shadow-sm" style="width: 60px; height: 60px; font-size: 24px; font-weight: bold;">
+                            3
+                        </div>
+                        <h4 class="fw-bold mb-2 h5">Inspect & Approve</h4>
+                        <p class="text-muted mb-0 small">Receive a digital report and approve work.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card-hover bg-white h-100 p-4 rounded-4 shadow-sm border text-center" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-4 text-white shadow-sm" style="width: 60px; height: 60px; font-size: 24px; font-weight: bold;">
+                            4
+                        </div>
+                        <h4 class="fw-bold mb-2 h5">Drive Away</h4>
+                        <p class="text-muted mb-0 small">Pick up your fully serviced, washed vehicle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Add-on Services -->
+    <section class="py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); border-radius: 30px; margin-left: 15px; margin-right: 15px;">
+        <div class="position-absolute w-100 h-100 top-0 start-0" style="background-image: radial-gradient(circle at 50% 0%, rgba(37,99,235,0.2) 0%, transparent 60%); z-index: 0;"></div>
+        <div class="container text-center py-4 position-relative" style="z-index: 1;">
+            <div class="mb-5" data-aos="fade-up">
+                <span class="badge rounded-pill px-3 py-2 shadow-sm mb-3 text-uppercase fw-bold" style="background-color: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); letter-spacing: 1px; backdrop-filter: blur(5px);">EXTRAS</span>
+                <h2 class="display-5 fw-bold mb-3 text-white" style="font-size: clamp(2rem, 5vw, 3rem); color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">Convenience <span style="color: #60a5fa !important; -webkit-text-fill-color: #60a5fa !important;">Add-Ons</span></h2>
+            </div>
+            <div class="row justify-content-center g-4" data-aos="fade-up">
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="bg-white bg-opacity-10 h-100 p-4 p-lg-5 rounded-4 border text-center shadow-lg" style="border-color: rgba(255,255,255,0.1) !important; backdrop-filter: blur(10px); transition: transform 0.3s ease; cursor: default;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4 shadow-lg" style="width: 80px; height: 80px;">
+                            <i class="fas fa-car-side fa-2x text-gradient"></i>
+                        </div>
+                        <h4 class="fw-bold mb-0" style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">Courtesy Car</h4>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="bg-white bg-opacity-10 h-100 p-4 p-lg-5 rounded-4 border text-center shadow-lg" style="border-color: rgba(255,255,255,0.1) !important; backdrop-filter: blur(10px); transition: transform 0.3s ease; cursor: default;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4 shadow-lg" style="width: 80px; height: 80px;">
+                            <i class="fas fa-truck-pickup fa-2x text-gradient"></i>
+                        </div>
+                        <h4 class="fw-bold mb-0" style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">Valet Pick-up</h4>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="bg-white bg-opacity-10 h-100 p-4 p-lg-5 rounded-4 border text-center shadow-lg" style="border-color: rgba(255,255,255,0.1) !important; backdrop-filter: blur(10px); transition: transform 0.3s ease; cursor: default;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4 shadow-lg" style="width: 80px; height: 80px;">
+                            <i class="fas fa-soap fa-2x text-gradient"></i>
+                        </div>
+                        <h4 class="fw-bold mb-0" style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">Detailing & Wash</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 9: FAQ Snippet -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="text-center mx-auto mb-5">
+                        <span class="badge rounded-pill px-3 py-2 shadow-sm mb-3 text-uppercase fw-bold" style="background-color: rgba(37, 99, 235, 0.1); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); letter-spacing: 1px;">GOT QUESTIONS?</span>
+                        <h2 class="display-5 fw-bold mb-3" style="font-size: clamp(2rem, 5vw, 3rem);">Frequently Asked <span class="text-gradient">Questions</span></h2>
+                    </div>
+                    <div class="accordion glass-panel border-0 shadow-sm" style="border-radius: 16px;" id="faqAccordion">
+                        <div class="accordion-item bg-white border-bottom" style="border-radius: 16px 16px 0 0;">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button bg-white fw-bold py-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Do you work on luxury/exotic cars?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted pb-4 px-4 pt-0">
+                                    Absolutely. Our master technicians are fully certified to handle European luxury brands, exotic sports cars, and high-end EVs.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-white border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-white fw-bold py-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Can I bring my own parts?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted pb-4 px-4 pt-0">
+                                    While we prefer using our vetted, warranty-backed OEM and performance parts, we can install customer-supplied parts. Note that our 2-year warranty will only apply to labor in these cases.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-white border-0" style="border-radius: 0 0 16px 16px;">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-white fw-bold py-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="border-radius: 0 0 16px 16px;">
+                                    How long does a standard service take?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted pb-4 px-4 pt-0">
+                                    Most standard services and oil changes are completed within 60-90 minutes. We'll provide a precise time estimate when you check in.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5">
+                        <a href="404.html" class="btn btn-custom-outline rounded-pill px-5 py-3 fw-bold">View All FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 10: Call to Action -->
+    <section class="py-5">
+        <div class="container" data-aos="zoom-in">
+            <div class="position-relative overflow-hidden rounded-4 shadow-lg p-4 p-md-5 text-center" style="background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);">
+                <!-- Decorative background elements -->
+                <div class="position-absolute top-0 start-0 w-100 h-100" style="background-image: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 40%), radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 0%, transparent 40%); z-index: 0;"></div>
+                
+                <div class="position-relative" style="z-index: 1;">
+                    <span class="badge rounded-pill px-3 py-2 shadow-sm mb-4 text-uppercase fw-bold" style="background-color: rgba(255, 255, 255, 0.15); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); letter-spacing: 1px; backdrop-filter: blur(5px);">GET STARTED TODAY</span>
+                    
+                    <h2 class="display-5 fw-bold mb-4 text-white" style="font-size: clamp(1.8rem, 5vw, 3.5rem); color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; line-height: 1.2;">Ready to Experience the <span style="color: #93c5fd !important; -webkit-text-fill-color: #93c5fd !important;">Ultimate</span> Platform?</h2>
+                    
+                    <p class="mb-5 mx-auto fs-5" style="max-width: 650px; color: rgba(255,255,255,0.85) !important; -webkit-text-fill-color: rgba(255,255,255,0.85) !important; line-height: 1.7;">Join thousands of smart drivers who have modernized their car maintenance. Book your first digital service in less than 60 seconds.</p>
+                    
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                        <a href="404.html" class="btn btn-custom-secondary btn-lg rounded-pill px-5 py-3 fw-bold shadow-sm" style="color: var(--primary-color) !important; -webkit-text-fill-color: var(--primary-color) !important; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">Book Your Appointment <i class="fas fa-calendar-check ms-2"></i></a>
+                        
+                        <a href="404.html" class="btn btn-custom-outline btn-lg rounded-pill px-5 py-3 fw-bold" style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 11: Newsletter -->
+    <section class="py-5 border-top" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="row align-items-center justify-content-center g-4">
+                <div class="col-lg-5 text-center text-lg-start" data-aos="fade-right">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-3 shadow-sm border" style="width: 70px; height: 70px;">
+                        <i class="fas fa-envelope-open-text fa-2x text-gradient"></i>
+                    </div>
+                    <h2 class="display-6 fw-bold mb-2">Subscribe for <span class="text-gradient">Offers</span></h2>
+                    <p class="text-muted mb-0 fs-5">Get the latest news, maintenance tips, and special discounts directly to your inbox.</p>
+                </div>
+                <div class="col-lg-6 offset-lg-1" data-aos="fade-left">
+                    <div class="bg-white p-2 rounded-4 shadow-sm" style="border: 1px solid rgba(0,0,0,0.08);">
+                        <form action="404.html" class="newsletter-form d-flex flex-column flex-sm-row gap-2 gap-sm-0" novalidate>
+                            <input type="email" class="form-control border-0 px-4 py-3 bg-transparent flex-grow-1 newsletter-input" placeholder="username@gmail.com" required style="box-shadow: none !important; font-size: 1.05rem;">
+                            <button type="submit" class="btn btn-custom-primary rounded-3 px-5 py-3 fw-bold flex-shrink-0 shadow-sm" style="transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">Subscribe <i class="fas fa-paper-plane ms-2"></i></button>
+                        </form>
+                        <div class="newsletter-error text-danger small mt-2 ps-1 fw-semibold" style="display: none;">Please enter a valid Gmail address (@gmail.com).</div>
+                    </div>
+                    <div class="mt-3 text-center text-lg-start ps-lg-3">
+                        <small class="text-muted fw-bold"><i class="fas fa-lock text-success me-1"></i> We respect your privacy. No spam.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 12: Footer -->
+    <footer class="pt-5 pb-4 border-top" style="background: rgba(255, 255, 255, 0.9);">
+    <div class="container pt-3">
+        <div class="row g-4 mb-5">
+            <div class="col-lg-4 pe-lg-5">
+                <a class="mb-4 d-flex align-items-center position-relative text-decoration-none logo" style="z-index: 1060;" href="index.html" aria-label="Stackly Home">
+                    <img class="logo-img footer-logo-img" src="images/stackly-logo.webp" alt="Stackly Logo" style="height: 44px;">
+                </a>
+                <p class="text-muted mt-3 mb-3" style="line-height: 1.8;">The next-generation automotive platform engineered for supercar precision, AI diagnostics, performance tuning, and seamless digital booking.</p>
+                <div class="d-flex align-items-center gap-2 mb-4 p-2 px-3 rounded-pill" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); width: fit-content;">
+                    <span class="speed-dial-indicator"></span>
+                    <span class="small fw-bold text-success" style="font-size: 0.75rem; letter-spacing: 0.5px;">GARAGE OPEN NOW &bull; 14 TECHS ON DUTY</span>
+                </div>
+                <div class="d-flex gap-3">
+                    <a href="404.html" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="404.html" class="footer-social-icon"><i class="fab fa-x-twitter"></i></a>
+                    <a href="404.html" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="404.html" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="fw-bold mb-4" style="color: var(--text-main); font-family: 'Orbitron', sans-serif; font-size: 1rem;">Platform</h5>
+                <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                    <li><a href="index.html" class="text-muted text-decoration-none footer-link-hover">Home</a></li>
+                    <li><a href="about.html" class="text-muted text-decoration-none footer-link-hover">About</a></li>
+                    <li><a href="services.html" class="text-muted text-decoration-none footer-link-hover">Services</a></li>
+                    <li><a href="pricing.html" class="text-muted text-decoration-none footer-link-hover">Pricing</a></li>
+                    <li><a href="blog.html" class="text-muted text-decoration-none footer-link-hover">Blog</a></li>
+                    <li><a href="contact.html" class="text-muted text-decoration-none footer-link-hover">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="fw-bold mb-4" style="color: var(--text-main); font-family: 'Orbitron', sans-serif; font-size: 1rem;">Tech Center</h5>
+                <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                    <li>
+                        <a href="https://maps.google.com" target="_blank" class="text-muted text-decoration-none d-flex align-items-start footer-contact-link">
+                            <i class="fas fa-location-dot text-primary mt-1 me-3 fs-5"></i>
+                            <span>Silicon Apex Speedway Way,<br>Suite 400, Automotive Park</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+18005550199" class="text-muted text-decoration-none d-flex align-items-center footer-contact-link">
+                            <i class="fas fa-phone-volume text-primary me-3 fs-5"></i>
+                            <span>+1 (800) 555-APEX (2739)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:service@apexautomotive.io" class="text-muted text-decoration-none d-flex align-items-center footer-contact-link">
+                            <i class="fas fa-envelope-circle-check text-primary me-3 fs-5"></i>
+                            <span>service@apexautomotive.io</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="fw-bold mb-4" style="color: var(--text-main); font-family: 'Orbitron', sans-serif; font-size: 1rem;">VIP Speed Pass</h5>
+                <p class="text-muted small mb-3">Join 15,000+ drivers receiving track reports, dyno graphs, and seasonal discounts.</p>
+                <form action="404.html" class="d-flex flex-column gap-2 mb-3 newsletter-form" novalidate>
+                    <input type="email" class="form-control px-3 py-2 bg-light border-0 shadow-sm newsletter-input" placeholder="username@gmail.com" required style="border-radius: 8px; font-size: 0.9rem;">
+                    <button type="submit" class="btn btn-custom-primary py-2 shadow-sm fw-bold w-100" style="border-radius: 8px; font-size: 0.85rem;">Subscribe to Feed</button>
+                    <div class="newsletter-error text-danger small mt-1 fw-semibold" style="display: none; font-size: 0.8rem;">Please enter a valid Gmail address (@gmail.com).</div>
+                </form>
+            </div>
+        </div>
+        <div class="row pt-4 mt-2" style="border-top: 1px solid rgba(0,0,0,0.06);">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <p class="text-muted small mb-0">&copy; 2026 STACKLY Automotive Performance & Diagnostics. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <a href="404.html" class="text-muted small text-decoration-none footer-link-hover me-3">Privacy Telemetry</a>
+                <a href="404.html" class="text-muted small text-decoration-none footer-link-hover">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="js/automotive-audio.js"></script>
+    <script src="js/automotive-three.js"></script>
+    <script src="js/automotive-effects.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

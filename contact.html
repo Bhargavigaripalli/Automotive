@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="images/stackly-logo.webp">
+    <title>Contact Us - STACKLY AUTO</title>
+    <!-- Bootstrap 5.3.3 CSS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Supercharged Automotive Animations CSS -->
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- Three.js Background Container -->
+    <div id="three-canvas-container"></div>
+
+    <!-- Section 1: Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light glass-nav fixed-top shadow-sm" style="z-index: 1030; padding: 12px 0;">
+    <div class="container">
+        <!-- Left: Logo -->
+        <a class="navbar-brand logo d-flex align-items-center text-decoration-none" href="index.html" id="nav-brand-logo" aria-label="Stackly Home">
+            <img class="logo-img" src="images/stackly-logo.webp" alt="Stackly Logo">
+        </a>
+
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler border-0 shadow-none d-lg-none ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="outline: none;">
+            <i class="fas fa-bars fs-4" style="color: var(--primary-color);"></i>
+        </button>
+
+        <!-- Center: Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto align-items-center gap-1 gap-lg-3 my-3 my-lg-0">
+                <li class="nav-item"><a class="nav-link fw-bold px-2" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold px-2" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold px-2" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold px-2" href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold px-2" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold px-2" href="contact.html">Contact</a></li>
+                <li class="nav-item d-md-none w-100 mt-2"><a class="btn btn-custom-outline w-100 rounded-pill py-2" href="login.html">Login</a></li>
+            </ul>
+        </div>
+        
+        <!-- Right: Action Controls -->
+        <div class="d-none d-md-flex align-items-center gap-2">
+
+            <!-- Login -->
+            <a href="login.html" class="btn btn-custom-secondary rounded-pill px-3 py-2 fw-bold" style="font-size: 0.85rem;">
+                <i class="fas fa-user-circle me-1"></i> Login
+            </a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Section 2: Hero Section -->
+    <section class="pt-5 mt-5 page-hero d-flex align-items-center position-relative" style="min-height: 80vh;">
+        <div class="page-hero-bg position-absolute w-100 h-100" style="top: 0; left: 0; background-image: url('assets/images/img_15.webp'); background-size: cover; background-position: center;"></div>
+        <div class="hero-overlay position-absolute w-100 h-100" style="top: 0; left: 0; background: linear-gradient(to bottom, rgba(10, 15, 25, 0.8) 0%, rgba(10, 15, 25, 0.4) 100%);"></div>
+        <div class="container hero-content text-center position-relative" style="z-index: 2;">
+            <span class="badge rounded-pill px-3 py-2 shadow-sm mb-3 text-uppercase fw-bold" style="background-color: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); letter-spacing: 1px; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">SUPPORT & INQUIRIES</span>
+            <h1 class="hero-title fw-bold mb-3 mx-auto text-white" style="text-shadow: 0 4px 20px rgba(0,0,0,0.8); font-size: clamp(2.2rem, 8vw, 4.5rem); line-height: 1.2; max-width: 800px;">
+                <span style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">Get in</span> <span class="text-gradient" style="-webkit-text-fill-color: transparent !important;">Touch</span>
+            </h1>
+            <p class="hero-subtitle text-white mx-auto mb-0" style="text-shadow: 0 2px 10px rgba(0,0,0,0.8); -webkit-text-fill-color: #ffffff !important; opacity: 1 !important; font-size: clamp(1rem, 4vw, 1.25rem); max-width: 700px; line-height: 1.6;" data-aos="fade-up" data-aos-delay="300">
+                We're here to help you with your car maintenance needs. Reach out to our support team or directly message our master mechanics.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 3: Info Cards -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-hover bg-white h-100 p-4 p-lg-5 rounded-4 shadow-sm border text-center" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-map-marker-alt fa-2x text-gradient"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Location</h4>
+                        <p class="text-muted mb-0 fs-6">MMR Complex, Chinna Thirupathi,<br>Salem, Tamil Nadu 636008</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-hover bg-white h-100 p-4 p-lg-5 rounded-4 shadow-sm border text-center" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-phone-alt fa-2x text-gradient"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Phone</h4>
+                        <p class="text-muted mb-0 fs-6">+91 9876543210</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card-hover bg-white h-100 p-4 p-lg-5 rounded-4 shadow-sm border text-center" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-envelope fa-2x text-gradient"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Email</h4>
+                        <p class="text-muted mb-0 fs-6">support@stackly.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Contact Form -->
+    <section class="py-5">
+        <div class="container" data-aos="fade-up">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <span class="badge rounded-pill px-3 py-2 shadow-sm mb-3 text-uppercase fw-bold" style="background-color: rgba(37, 99, 235, 0.1); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); letter-spacing: 1px;">MESSAGE US</span>
+                        <h2 class="display-5 fw-bold mb-3" style="font-size: clamp(2rem, 5vw, 3rem);">Send a <span class="text-gradient">Request</span></h2>
+                        <p class="text-muted mx-auto fs-5" style="max-width: 600px;">Have a question or need assistance? Fill out the form below and our team will get back to you shortly.</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-lg border" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <form id="contactForm" novalidate>
+                            <div class="row g-4">
+                                <!-- Name: Alphabets and spaces only, max 16 characters, mandatory -->
+                                <div class="col-md-6">
+                                    <label for="contactName" class="form-label fw-bold small text-muted text-uppercase mb-1">
+                                        Full Name <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="bg-light p-2 rounded-4 contact-field-box" style="border: 1px solid rgba(0,0,0,0.08); transition: border-color 0.2s ease;">
+                                        <input type="text" id="contactName" name="name" class="form-control border-0 px-3 py-2 bg-transparent" placeholder="Alphabets only (max 16 chars)" maxlength="16" required autocomplete="name" style="box-shadow: none !important; font-size: 1.05rem;">
+                                    </div>
+                                    <div id="contactNameError" class="text-danger small mt-1 ps-2 fw-semibold" style="display: none;">Name must contain only alphabets and spaces (maximum 16 characters).</div>
+                                </div>
+
+                                <!-- Phone: Numbers only, max 10 digits, mandatory -->
+                                <div class="col-md-6">
+                                    <label for="contactPhone" class="form-label fw-bold small text-muted text-uppercase mb-1">
+                                        Phone Number <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="bg-light p-2 rounded-4 contact-field-box" style="border: 1px solid rgba(0,0,0,0.08); transition: border-color 0.2s ease;">
+                                        <input type="tel" id="contactPhone" name="phone" class="form-control border-0 px-3 py-2 bg-transparent" placeholder="10 digits only" maxlength="10" inputmode="numeric" required autocomplete="tel" style="box-shadow: none !important; font-size: 1.05rem;">
+                                    </div>
+                                    <div id="contactPhoneError" class="text-danger small mt-1 ps-2 fw-semibold" style="display: none;">Phone number must be exactly 10 digits.</div>
+                                </div>
+
+                                <!-- Gmail: Strictly @gmail.com format, mandatory -->
+                                <div class="col-md-6">
+                                    <label for="contactEmail" class="form-label fw-bold small text-muted text-uppercase mb-1">
+                                        Gmail Address <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="bg-light p-2 rounded-4 contact-field-box" style="border: 1px solid rgba(0,0,0,0.08); transition: border-color 0.2s ease;">
+                                        <input type="email" id="contactEmail" name="email" class="form-control border-0 px-3 py-2 bg-transparent" placeholder="username@gmail.com" required autocomplete="email" style="box-shadow: none !important; font-size: 1.05rem;">
+                                    </div>
+                                    <div id="contactEmailError" class="text-danger small mt-1 ps-2 fw-semibold" style="display: none;">Please enter a valid Gmail address (@gmail.com).</div>
+                                </div>
+
+                                <!-- Subject: Mandatory -->
+                                <div class="col-md-6">
+                                    <label for="contactSubject" class="form-label fw-bold small text-muted text-uppercase mb-1">
+                                        Subject <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="bg-light p-2 rounded-4 contact-field-box" style="border: 1px solid rgba(0,0,0,0.08); transition: border-color 0.2s ease;">
+                                        <select id="contactSubject" name="subject" class="form-select border-0 px-3 py-2 bg-transparent text-muted" required style="box-shadow: none !important; font-size: 1.05rem; cursor: pointer;">
+                                            <option selected disabled value="">Choose Subject</option>
+                                            <option value="General Inquiry">General Inquiry</option>
+                                            <option value="Service Booking">Service Booking</option>
+                                            <option value="Dyno Tuning">Dyno Tuning</option>
+                                            <option value="Feedback">Feedback</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div id="contactSubjectError" class="text-danger small mt-1 ps-2 fw-semibold" style="display: none;">Please select a subject.</div>
+                                </div>
+
+                                <!-- Message: Mandatory -->
+                                <div class="col-12">
+                                    <label for="contactMessage" class="form-label fw-bold small text-muted text-uppercase mb-1">
+                                        Your Message <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="bg-light p-2 rounded-4 contact-field-box" style="border: 1px solid rgba(0,0,0,0.08); transition: border-color 0.2s ease;">
+                                        <textarea id="contactMessage" name="message" class="form-control border-0 px-3 py-2 bg-transparent" placeholder="Type your dispatch message here..." rows="5" required style="box-shadow: none !important; font-size: 1.05rem; resize: none;"></textarea>
+                                    </div>
+                                    <div id="contactMessageError" class="text-danger small mt-1 ps-2 fw-semibold" style="display: none;">Please enter your message.</div>
+                                </div>
+
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" id="contactSubmitBtn" class="btn btn-custom-primary rounded-pill px-5 py-3 fw-bold shadow-lg" style="letter-spacing: 0.5px;">
+                                        <i class="fas fa-paper-plane me-2"></i> Transmit Dispatch Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Map Integration -->
+    <section class="py-5 bg-light">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title text-center mb-5">
+                <span class="badge rounded-pill px-3 py-2 shadow-sm mb-3 text-uppercase fw-bold" style="background-color: rgba(37, 99, 235, 0.1); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); letter-spacing: 1px;">FIND US</span>
+                <h2 class="display-5 fw-bold mb-3" style="font-size: clamp(2rem, 5vw, 3rem);">Interactive <span class="text-gradient">Map</span></h2>
+                <p class="text-muted mx-auto fs-5" style="max-width: 600px;">Locate our Salem Head Office and certified service headquarters.</p>
+            </div>
+            
+            <div class="bg-white p-2 p-md-3 rounded-4 shadow-sm border" style="border-color: rgba(0,0,0,0.05) !important;">
+                <div class="rounded-4 overflow-hidden position-relative w-100" style="height: 520px; background-color: #f1f5f9; border: 1px solid rgba(0,0,0,0.08);">
+                    <!-- OpenStreetMap Embed centered on MMR Complex, Chinna Thirupathi, Salem -->
+                    <iframe 
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=78.1400%2C11.6700%2C78.2000%2C11.7100&amp;layer=mapnik&amp;marker=11.6895%2C78.1720" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; width: 100%; height: 100%;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        title="Salem Head Office Map - MMR Complex, Chinna Thirupathi, Salem">
+                    </iframe>
+                    <!-- Floating Location Details Card -->
+                    <div class="position-absolute top-0 start-0 m-3 m-md-4" style="z-index: 10;">
+                        <div class="bg-white p-3 p-md-4 rounded-4 shadow-lg border" style="border-color: rgba(0,0,0,0.08) !important; max-width: 320px; backdrop-filter: blur(8px);">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <span class="badge rounded-pill bg-primary-subtle text-primary fw-bold" style="font-size: 0.72rem; letter-spacing: 0.5px;">HEADQUARTERS</span>
+                                <span class="small text-success fw-bold" style="font-size: 0.75rem;"><i class="fas fa-circle fa-2xs me-1"></i>Open Now</span>
+                            </div>
+                            <h6 class="fw-bold mb-1" style="font-size: 1.05rem;"><i class="fas fa-map-marker-alt text-gradient me-2"></i>Salem Head Office</h6>
+                            <p class="text-muted small mb-3" style="line-height: 1.6;">MMR Complex, Chinna Thirupathi,<br>Salem, Tamil Nadu 636008</p>
+                            <div class="d-flex flex-column gap-2">
+                                <a href="https://www.google.com/maps/search/?api=1&amp;query=MMR+Complex,+Chinna+Thirupathi,+Salem,+Tamil+Nadu+636008" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-custom-primary rounded-pill px-3 py-2 fw-bold text-center">
+                                    <i class="fas fa-external-link-alt me-1"></i> Open in Google Maps
+                                </a>
+                                <a href="tel:+18005550199" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-2 fw-semibold text-center small">
+                                    <i class="fas fa-phone-alt me-1"></i> Call Garage (+1 800-555-APEX)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Our Offices -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <span class="badge rounded-pill px-3 py-2 shadow-sm mb-3 text-uppercase fw-bold" style="background-color: rgba(37, 99, 235, 0.1); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); letter-spacing: 1px;">LOCATIONS</span>
+                <h2 class="display-5 fw-bold mb-3" style="font-size: clamp(2rem, 5vw, 3rem);">Our Garage <span class="text-gradient">Networks</span></h2>
+                <p class="text-muted mx-auto fs-5" style="max-width: 600px;">Visit any of our certified network garages for top-tier automotive care.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="service-card-hover bg-white p-4 p-md-5 rounded-4 shadow-sm border d-flex flex-column flex-sm-row align-items-sm-center h-100" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <img loading="lazy" decoding="async" src="assets/images/img_16.webp" class="rounded-4 mb-4 mb-sm-0 me-sm-4 shadow-sm" style="width: 150px; height: 150px; object-fit: cover;" alt="Office 1">
+                        <div>
+                            <h4 class="fw-bold mb-2">Salem Head Office</h4>
+                            <p class="text-muted mb-3" style="line-height: 1.6;">Main service center & tuning lab equipped with state-of-the-art diagnostic tools.</p>
+                            <a href="404.html" class="btn btn-custom-outline rounded-pill px-4 py-2 fw-bold text-uppercase small" style="letter-spacing: 0.5px;">Get Directions <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="service-card-hover bg-white p-4 p-md-5 rounded-4 shadow-sm border d-flex flex-column flex-sm-row align-items-sm-center h-100" style="border-color: rgba(0,0,0,0.05) !important;">
+                        <img loading="lazy" decoding="async" src="assets/images/img_17.webp" class="rounded-4 mb-4 mb-sm-0 me-sm-4 shadow-sm" style="width: 150px; height: 150px; object-fit: cover;" alt="Office 2">
+                        <div>
+                            <h4 class="fw-bold mb-2">Downtown Branch</h4>
+                            <p class="text-muted mb-3" style="line-height: 1.6;">Quick maintenance & EV inspections located conveniently in the heart of the city.</p>
+                            <a href="404.html" class="btn btn-custom-outline rounded-pill px-4 py-2 fw-bold text-uppercase small" style="letter-spacing: 0.5px;">Get Directions <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: FAQ -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <span class="badge rounded-pill px-3 py-2 shadow-sm mb-3 text-uppercase fw-bold" style="background-color: rgba(37, 99, 235, 0.1); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); letter-spacing: 1px;">QUESTIONS?</span>
+                <h2 class="display-5 fw-bold mb-3" style="font-size: clamp(2rem, 5vw, 3rem);">Frequently <span class="text-gradient">Asked</span></h2>
+                <p class="text-muted mx-auto fs-5" style="max-width: 600px;">Find quick answers to common questions about our services.</p>
+            </div>
+            
+            <div class="row justify-content-center" data-aos="fade-up">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item bg-white border-0 shadow-sm rounded-4 mb-3 overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-white text-dark shadow-none fw-bold px-4 py-4" style="font-size: 1.1rem;" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Do I need an appointment for service?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted px-4 pb-4 pt-0" style="line-height: 1.7;">
+                                    While we accept walk-ins for minor issues like diagnostics and tire pressure checks, we highly recommend booking an appointment to ensure immediate service and to reserve parts.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-white border-0 shadow-sm rounded-4 mb-3 overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-white text-dark shadow-none fw-bold px-4 py-4" style="font-size: 1.1rem;" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Do you work on hybrid and electric vehicles?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted px-4 pb-4 pt-0" style="line-height: 1.7;">
+                                    Absolutely! We have ASE Certified Master Technicians who specialize specifically in EV and hybrid systems, including high-voltage battery maintenance and advanced diagnostics.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Support Hours -->
+    <section class="py-5">
+        <div class="container text-center" data-aos="zoom-in">
+            <div class="service-card-hover bg-white p-4 p-md-5 mx-auto rounded-4 shadow-sm border position-relative overflow-hidden" style="max-width: 600px; border-color: rgba(0,0,0,0.05) !important;">
+                <i class="fas fa-clock position-absolute opacity-10" style="font-size: 10rem; right: -20px; bottom: -20px; color: var(--primary-color); z-index: 0;"></i>
+                <div class="position-relative" style="z-index: 1;">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-4" style="width: 80px; height: 80px;">
+                        <i class="fas fa-business-time fa-2x text-gradient"></i>
+                    </div>
+                    <h3 class="fw-bold mb-4 h2">Operating Hours</h3>
+                    <ul class="list-unstyled text-muted mb-0 fs-5">
+                        <li class="d-flex justify-content-between border-bottom pb-3 mb-3" style="border-color: rgba(0,0,0,0.05) !important;">
+                            <span class="fw-bold text-dark">Monday - Friday</span> <span>8:00 AM - 7:00 PM</span>
+                        </li>
+                        <li class="d-flex justify-content-between border-bottom pb-3 mb-3" style="border-color: rgba(0,0,0,0.05) !important;">
+                            <span class="fw-bold text-dark">Saturday</span> <span>9:00 AM - 5:00 PM</span>
+                        </li>
+                        <li class="d-flex justify-content-between mb-4">
+                            <span class="fw-bold text-dark">Sunday</span> <span class="text-danger fw-bold">Closed</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 p-3 bg-light rounded-4 border border-warning shadow-sm">
+                        <p class="mb-0 text-dark fw-bold"><i class="fas fa-exclamation-triangle text-warning me-2 fs-5"></i> 24/7 Emergency Towing: <a href="404.html" class="text-primary text-decoration-none ms-1">1-800-TOW-NEO</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 9: CTA (Copied from about.html) -->
+    <section class="py-5">
+        <div class="container" data-aos="zoom-in">
+            <div class="position-relative overflow-hidden rounded-4 shadow-lg p-4 p-md-5 text-center" style="background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);">
+                <!-- Decorative background elements -->
+                <div class="position-absolute top-0 start-0 w-100 h-100" style="background-image: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 40%), radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 0%, transparent 40%); z-index: 0;"></div>
+                
+                <div class="position-relative" style="z-index: 1;">
+                    <span class="badge rounded-pill px-3 py-2 shadow-sm mb-4 text-uppercase fw-bold" style="background-color: rgba(255, 255, 255, 0.15); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); letter-spacing: 1px; backdrop-filter: blur(5px);">GET STARTED TODAY</span>
+                    
+                    <h2 class="display-5 fw-bold mb-4 text-white" style="font-size: clamp(1.8rem, 5vw, 3.5rem); color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; line-height: 1.2;">Ready to Experience the <span style="color: #93c5fd !important; -webkit-text-fill-color: #93c5fd !important;">Ultimate</span> Platform?</h2>
+                    
+                    <p class="mb-5 mx-auto fs-5" style="max-width: 650px; color: rgba(255,255,255,0.85) !important; -webkit-text-fill-color: rgba(255,255,255,0.85) !important; line-height: 1.7;">Join thousands of smart drivers who have modernized their car maintenance. Book your first digital service in less than 60 seconds.</p>
+                    
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                        <a href="404.html" class="btn btn-custom-secondary btn-lg rounded-pill px-5 py-3 fw-bold shadow-sm" style="color: var(--primary-color) !important; -webkit-text-fill-color: var(--primary-color) !important; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">Book Your Appointment <i class="fas fa-calendar-check ms-2"></i></a>
+                        
+                        <a href="404.html" class="btn btn-custom-outline btn-lg rounded-pill px-5 py-3 fw-bold" style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 10: Footer -->
+    <footer class="pt-5 pb-4 border-top" style="background: rgba(255, 255, 255, 0.9);">
+    <div class="container pt-3">
+        <div class="row g-4 mb-5">
+            <div class="col-lg-4 pe-lg-5">
+                <a class="mb-4 d-flex align-items-center position-relative text-decoration-none logo" style="z-index: 1060;" href="index.html" aria-label="Stackly Home">
+                    <img class="logo-img footer-logo-img" src="images/stackly-logo.webp" alt="Stackly Logo" style="height: 44px;">
+                </a>
+                <p class="text-muted mt-3 mb-3" style="line-height: 1.8;">The next-generation automotive platform engineered for supercar precision, AI diagnostics, performance tuning, and seamless digital booking.</p>
+                <div class="d-flex align-items-center gap-2 mb-4 p-2 px-3 rounded-pill" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); width: fit-content;">
+                    <span class="speed-dial-indicator"></span>
+                    <span class="small fw-bold text-success" style="font-size: 0.75rem; letter-spacing: 0.5px;">GARAGE OPEN NOW &bull; 14 TECHS ON DUTY</span>
+                </div>
+                <div class="d-flex gap-3">
+                    <a href="404.html" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="404.html" class="footer-social-icon"><i class="fab fa-x-twitter"></i></a>
+                    <a href="404.html" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="404.html" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="fw-bold mb-4" style="color: var(--text-main); font-family: 'Orbitron', sans-serif; font-size: 1rem;">Platform</h5>
+                <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                    <li><a href="index.html" class="text-muted text-decoration-none footer-link-hover">Home</a></li>
+                    <li><a href="about.html" class="text-muted text-decoration-none footer-link-hover">About</a></li>
+                    <li><a href="services.html" class="text-muted text-decoration-none footer-link-hover">Services</a></li>
+                    <li><a href="pricing.html" class="text-muted text-decoration-none footer-link-hover">Pricing</a></li>
+                    <li><a href="blog.html" class="text-muted text-decoration-none footer-link-hover">Blog</a></li>
+                    <li><a href="contact.html" class="text-muted text-decoration-none footer-link-hover">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="fw-bold mb-4" style="color: var(--text-main); font-family: 'Orbitron', sans-serif; font-size: 1rem;">Tech Center</h5>
+                <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                    <li>
+                        <a href="https://maps.google.com" target="_blank" class="text-muted text-decoration-none d-flex align-items-start footer-contact-link">
+                            <i class="fas fa-location-dot text-primary mt-1 me-3 fs-5"></i>
+                            <span>Silicon Apex Speedway Way,<br>Suite 400, Automotive Park</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+18005550199" class="text-muted text-decoration-none d-flex align-items-center footer-contact-link">
+                            <i class="fas fa-phone-volume text-primary me-3 fs-5"></i>
+                            <span>+1 (800) 555-APEX (2739)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:service@apexautomotive.io" class="text-muted text-decoration-none d-flex align-items-center footer-contact-link">
+                            <i class="fas fa-envelope-circle-check text-primary me-3 fs-5"></i>
+                            <span>service@apexautomotive.io</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="fw-bold mb-4" style="color: var(--text-main); font-family: 'Orbitron', sans-serif; font-size: 1rem;">VIP Speed Pass</h5>
+                <p class="text-muted small mb-3">Join 15,000+ drivers receiving track reports, dyno graphs, and seasonal discounts.</p>
+                <form action="404.html" class="d-flex flex-column gap-2 mb-3 newsletter-form" novalidate>
+                    <input type="email" class="form-control px-3 py-2 bg-light border-0 shadow-sm newsletter-input" placeholder="username@gmail.com" required style="border-radius: 8px; font-size: 0.9rem;">
+                    <button type="submit" class="btn btn-custom-primary py-2 shadow-sm fw-bold w-100" style="border-radius: 8px; font-size: 0.85rem;">Subscribe to Feed</button>
+                </form>
+            </div>
+        </div>
+        <div class="row pt-4 mt-2" style="border-top: 1px solid rgba(0,0,0,0.06);">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <p class="text-muted small mb-0">&copy; 2026 STACKLY Automotive Performance & Diagnostics. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <a href="404.html" class="text-muted small text-decoration-none footer-link-hover me-3">Privacy Telemetry</a>
+                <a href="404.html" class="text-muted small text-decoration-none footer-link-hover">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="js/automotive-audio.js"></script>
+    <script src="js/automotive-three.js"></script>
+    <script src="js/automotive-effects.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

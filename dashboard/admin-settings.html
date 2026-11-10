@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; padding: 1rem; }
+        @media (min-width: 768px) { body { padding: 1.5rem; } }
+        /* Ultra responsive tweaks down to 320px */
+        @media (max-width: 360px) {
+            body { padding: 0.5rem; }
+            .panel, .stat-card { padding: 1rem; }
+            .stat-card h2 { font-size: 1.3rem; }
+            h3, h4, h5 { font-size: 1.1rem !important; }
+            .btn { font-size: 0.8rem; padding: 0.4rem 0.8rem !important; }
+            .icon-box { width: 40px; height: 40px; }
+            .table-responsive { font-size: 0.8rem; }
+            .d-flex.justify-content-between.align-items-center.mb-4 { flex-direction: column; align-items: flex-start !important; gap: 10px; }
+        }
+        .stat-card { background: #fff; border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: transform 0.3s; height: 100%; }
+        .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
+        .icon-box { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .panel { background: #fff; border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 15px rgba(0,0,0,0.02); margin-bottom: 1.5rem; }
+        .badge-soft-success { background-color: rgba(16, 185, 129, 0.1); color: #10b981; }
+        .badge-soft-warning { background-color: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+        .badge-soft-danger { background-color: rgba(239, 68, 68, 0.1); color: #ef4444; }
+        .badge-soft-primary { background-color: rgba(37, 99, 235, 0.1); color: #2563eb; }
+        .badge-soft-info { background-color: rgba(6, 182, 212, 0.1); color: #06b6d4; }
+        
+        /* Custom scrollbar for table */
+        .table-responsive::-webkit-scrollbar { height: 6px; }
+        .table-responsive::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="fw-bold text-dark mb-0">Platform Settings</h4>
+        <button class="btn btn-custom-primary rounded-pill px-4 fw-bold shadow-sm" onclick="window.location.href='../404.html'"><i class="fas fa-save me-2"></i> Save Configuration</button>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-3">
+            <div class="panel p-3">
+                <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active text-start fw-bold mb-2 rounded-pill px-4" data-bs-toggle="pill" type="button"><i class="fas fa-globe me-2"></i> General</button>
+                    <button class="nav-link text-start fw-bold mb-2 rounded-pill px-4 text-dark" data-bs-toggle="pill" type="button"><i class="fas fa-percentage me-2"></i> Financials</button>
+                    <button class="nav-link text-start fw-bold mb-2 rounded-pill px-4 text-dark" data-bs-toggle="pill" type="button"><i class="fas fa-shield-alt me-2"></i> Security</button>
+                    <button class="nav-link text-start fw-bold rounded-pill px-4 text-dark" data-bs-toggle="pill" type="button"><i class="fas fa-bell me-2"></i> System Alerts</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-9">
+            <div class="panel">
+                <h5 class="fw-bold mb-4">General Configuration</h5>
+                <form>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold small text-muted text-uppercase mb-2">Platform Name</label>
+                            <input type="text" class="form-control bg-light border-0 px-3 py-2 rounded-3" value="Stackly Car Service Platform">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold small text-muted text-uppercase mb-2">Support Email</label>
+                            <input type="email" class="form-control bg-light border-0 px-3 py-2 rounded-3" value="support@stackly.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold small text-muted text-uppercase mb-2">Support Phone Number</label>
+                            <input type="tel" class="form-control bg-light border-0 px-3 py-2 rounded-3" value="+1 (800) 123-4567">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold small text-muted text-uppercase mb-2">Timezone</label>
+                            <select class="form-select bg-light border-0 px-3 py-2 rounded-3">
+                                <option>UTC-05:00 Eastern Time (US & Canada)</option>
+                                <option>UTC-06:00 Central Time (US & Canada)</option>
+                                <option selected>UTC-08:00 Pacific Time (US & Canada)</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                
+                <hr class="my-5">
+                
+                <h5 class="fw-bold mb-4">Financials & Commission</h5>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold small text-muted text-uppercase mb-2">Default Platform Fee (%)</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control bg-light border-0 px-3 py-2 rounded-start-3" value="15">
+                            <span class="input-group-text bg-light border-0 rounded-end-3 fw-bold">%</span>
+                        </div>
+                        <small class="text-muted mt-1 d-block">This is the base cut taken from every completed booking.</small>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold small text-muted text-uppercase mb-2">Payout Cycle</label>
+                        <select class="form-select bg-light border-0 px-3 py-2 rounded-3">
+                            <option>Daily</option>
+                            <option selected>Weekly (Every Monday)</option>
+                            <option>Bi-Weekly</option>
+                            <option>Monthly (1st of the month)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <hr class="my-5">
+
+                <h5 class="fw-bold mb-4 text-danger"><i class="fas fa-exclamation-triangle me-2"></i> Danger Zone</h5>
+                <div class="card border-danger bg-transparent rounded-4 p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="fw-bold text-danger mb-1">Maintenance Mode</h6>
+                            <small class="text-muted">Take the platform offline for customers and garages. Superadmins can still log in.</small>
+                        </div>
+                        <div class="form-check form-switch mb-0">
+                            <input class="form-check-input bg-danger border-danger" type="checkbox" role="switch" style="width: 45px; height: 25px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.45.1/dist/apexcharts.min.js" defer></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; padding: 1rem; }
+        @media (min-width: 768px) { body { padding: 1.5rem; } }
+        /* Ultra responsive tweaks down to 320px */
+        @media (max-width: 360px) {
+            body { padding: 0.5rem; }
+            .panel, .stat-card { padding: 1rem; }
+            .stat-card h2 { font-size: 1.3rem; }
+            h3, h4, h5 { font-size: 1.1rem !important; }
+            .btn { font-size: 0.8rem; padding: 0.4rem 0.8rem !important; }
+            .icon-box { width: 40px; height: 40px; }
+            .table-responsive { font-size: 0.8rem; }
+            .d-flex.justify-content-between.align-items-center.mb-4 { flex-direction: column; align-items: flex-start !important; gap: 10px; }
+        }
+        .stat-card { background: #fff; border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: transform 0.3s; height: 100%; }
+        .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
+        .icon-box { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .panel { background: #fff; border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 15px rgba(0,0,0,0.02); margin-bottom: 1.5rem; }
+        .badge-soft-success { background-color: rgba(16, 185, 129, 0.1); color: #10b981; }
+        .badge-soft-warning { background-color: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+        .badge-soft-danger { background-color: rgba(239, 68, 68, 0.1); color: #ef4444; }
+        .badge-soft-primary { background-color: rgba(37, 99, 235, 0.1); color: #2563eb; }
+        .vehicle-img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem; }
+        
+        /* Custom scrollbar for table */
+        .table-responsive::-webkit-scrollbar { height: 6px; }
+        .table-responsive::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h4 class="fw-bold text-dark mb-1">Welcome back, Customer! 👋</h4>
+            <p class="text-muted small mb-0">Here is what's happening with your vehicles today.</p>
+        </div>
+        <button class="btn btn-custom-primary rounded-pill px-4 fw-bold shadow-sm" onclick="window.location.href='../404.html'"><i class="fas fa-plus me-2"></i> Book Service</button>
+    </div>
+
+    <div class="row g-3 g-md-4 mb-4">
+        <div class="col-6 col-md-3">
+            <div class="stat-card">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <div class="icon-box bg-primary bg-opacity-10 text-primary mb-2">
+                        <i class="fas fa-car fa-lg"></i>
+                    </div>
+                </div>
+                <h2 class="fw-bold mb-0">2</h2>
+                <p class="text-muted small text-uppercase fw-bold mb-0 mt-1">My Vehicles</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="stat-card">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <div class="icon-box bg-warning bg-opacity-10 text-warning mb-2">
+                        <i class="fas fa-calendar-alt fa-lg"></i>
+                    </div>
+                </div>
+                <h2 class="fw-bold mb-0">1</h2>
+                <p class="text-muted small text-uppercase fw-bold mb-0 mt-1">Upcoming</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="stat-card">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <div class="icon-box bg-success bg-opacity-10 text-success mb-2">
+                        <i class="fas fa-wallet fa-lg"></i>
+                    </div>
+                </div>
+                <h2 class="fw-bold mb-0">$450</h2>
+                <p class="text-muted small text-uppercase fw-bold mb-0 mt-1">Spent (YTD)</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="stat-card">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <div class="icon-box bg-info bg-opacity-10 text-info mb-2">
+                        <i class="fas fa-star fa-lg"></i>
+                    </div>
+                </div>
+                <h2 class="fw-bold mb-0">1,250</h2>
+                <p class="text-muted small text-uppercase fw-bold mb-0 mt-1">Reward Points</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="panel h-100">
+                <h5 class="fw-bold mb-4">Service Spending Overview</h5>
+                <div id="spendingChart"></div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel h-100">
+                <h5 class="fw-bold mb-4">Next Appointment</h5>
+                <div class="card border-0 bg-light rounded-4 p-3 mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge badge-soft-warning px-2 py-1">Upcoming</span>
+                        <small class="text-muted fw-bold">Oct 15, 2026</small>
+                    </div>
+                    <h6 class="fw-bold mb-1">Full Synthetic Oil Change</h6>
+                    <p class="text-muted small mb-0"><i class="fas fa-car side me-1"></i> 2019 Toyota Camry</p>
+                    <hr class="my-2">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-map-marker-alt text-danger me-2"></i>
+                        <small class="text-muted">Speedy Garage, Downtown</small>
+                    </div>
+                </div>
+                <button class="btn btn-custom-outline w-100 rounded-pill fw-bold" onclick="window.location.href='../404.html'">View Details</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel mt-4">
+        <h5 class="fw-bold mb-4">Recent Service History</h5>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th class="text-muted small text-uppercase fw-bold border-0 rounded-start">Service ID</th>
+                        <th class="text-muted small text-uppercase fw-bold border-0">Vehicle</th>
+                        <th class="text-muted small text-uppercase fw-bold border-0">Service Details</th>
+                        <th class="text-muted small text-uppercase fw-bold border-0">Date</th>
+                        <th class="text-muted small text-uppercase fw-bold border-0">Status</th>
+                        <th class="text-muted small text-uppercase fw-bold border-0 rounded-end text-end">Amount</th>
+                    </tr>
+                </thead>
+                <tbody class="border-top-0">
+                    <tr>
+                        <td class="fw-bold text-dark">#SRV-9021</td>
+                        <td><div class="fw-bold">Ford F-150</div><small class="text-muted">2021</small></td>
+                        <td>Brake Pad Replacement</td>
+                        <td class="text-muted">Sep 10, 2026</td>
+                        <td><span class="badge badge-soft-success px-3 py-2 rounded-pill">Completed</span></td>
+                        <td class="text-end fw-bold">$210.00</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold text-dark">#SRV-8843</td>
+                        <td><div class="fw-bold">Toyota Camry</div><small class="text-muted">2019</small></td>
+                        <td>Standard Wash & Vacuum</td>
+                        <td class="text-muted">Aug 22, 2026</td>
+                        <td><span class="badge badge-soft-success px-3 py-2 rounded-pill">Completed</span></td>
+                        <td class="text-end fw-bold">$45.00</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold text-dark">#SRV-8510</td>
+                        <td><div class="fw-bold">Ford F-150</div><small class="text-muted">2021</small></td>
+                        <td>Tire Rotation & Balance</td>
+                        <td class="text-muted">Jul 05, 2026</td>
+                        <td><span class="badge badge-soft-success px-3 py-2 rounded-pill">Completed</span></td>
+                        <td class="text-end fw-bold">$85.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var options = {
+                series: [{ name: 'Spending ($)', data: [45, 0, 85, 0, 45, 210] }],
+                chart: { type: 'area', height: 300, toolbar: { show: false }, fontFamily: 'Plus Jakarta Sans, sans-serif' },
+                colors: ['#2563eb'],
+                fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.4, opacityTo: 0.0, stops: [0, 100] } },
+                dataLabels: { enabled: false },
+                stroke: { curve: 'smooth', width: 3 },
+                xaxis: { categories: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'], axisBorder: { show: false }, axisTicks: { show: false } },
+                yaxis: { labels: { formatter: function (val) { return "$" + val; } } },
+                grid: { borderColor: '#f1f5f9', strokeDashArray: 4, yaxis: { lines: { show: true } } }
+            };
+            var chart = new ApexCharts(document.querySelector("#spendingChart"), options);
+            chart.render();
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+</html>

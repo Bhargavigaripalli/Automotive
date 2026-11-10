@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.45.1/dist/apexcharts.min.js" defer></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; padding: 1rem; }
+        @media (min-width: 768px) { body { padding: 1.5rem; } }
+        /* Ultra responsive tweaks down to 320px */
+        @media (max-width: 360px) {
+            body { padding: 0.5rem; }
+            .panel, .stat-card { padding: 1rem; }
+            .stat-card h2 { font-size: 1.3rem; }
+            h3, h4, h5 { font-size: 1.1rem !important; }
+            .btn { font-size: 0.8rem; padding: 0.4rem 0.8rem !important; }
+            .icon-box { width: 40px; height: 40px; }
+            .table-responsive { font-size: 0.8rem; }
+            .d-flex.justify-content-between.align-items-center.mb-4 { flex-direction: column; align-items: flex-start !important; gap: 10px; }
+        }
+        .stat-card { background: #fff; border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: transform 0.3s; height: 100%; }
+        .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
+        .icon-box { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .panel { background: #fff; border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 15px rgba(0,0,0,0.02); margin-bottom: 1.5rem; }
+        .badge-soft-success { background-color: rgba(16, 185, 129, 0.1); color: #10b981; }
+        .badge-soft-warning { background-color: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+        .badge-soft-danger { background-color: rgba(239, 68, 68, 0.1); color: #ef4444; }
+        .badge-soft-primary { background-color: rgba(37, 99, 235, 0.1); color: #2563eb; }
+        .vehicle-img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem; }
+        
+        /* Custom scrollbar for table */
+        .table-responsive::-webkit-scrollbar { height: 6px; }
+        .table-responsive::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="fw-bold text-dark mb-0">Billing & Payments</h4>
+        <button class="btn btn-custom-primary rounded-pill px-4 fw-bold shadow-sm" onclick="window.location.href='../404.html'"><i class="fas fa-credit-card me-2"></i> Add Method</button>
+    </div>
+
+    <div class="row g-4 mb-4">
+        <div class="col-lg-8">
+            <div class="row g-4 h-100">
+                <div class="col-sm-6">
+                    <div class="stat-card bg-primary text-white border-0">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="icon-box bg-white bg-opacity-25 text-white">
+                                <i class="fas fa-wallet fa-lg"></i>
+                            </div>
+                        </div>
+                        <p class="text-white-50 small text-uppercase fw-bold mb-1">Outstanding Balance</p>
+                        <h2 class="fw-bold mb-0">$0.00</h2>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="icon-box bg-success bg-opacity-10 text-success">
+                                <i class="fas fa-history fa-lg"></i>
+                            </div>
+                        </div>
+                        <p class="text-muted small text-uppercase fw-bold mb-1">Last Payment</p>
+                        <h3 class="fw-bold mb-0">$210.00</h3>
+                        <small class="text-muted">Sep 10, 2026</small>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="panel mb-0 h-100">
+                        <h5 class="fw-bold mb-4">Expense Analysis (Last 6 Months)</h5>
+                        <div id="expenseChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="panel h-100">
+                <h5 class="fw-bold mb-4">Payment Methods</h5>
+                
+                <div class="card border bg-light rounded-4 p-3 mb-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fab fa-cc-visa fa-2x text-primary"></i>
+                            <div>
+                                <h6 class="fw-bold mb-0">Visa ending in 4242</h6>
+                                <small class="text-muted">Expires 12/28</small>
+                            </div>
+                        </div>
+                        <span class="badge bg-primary rounded-pill">Default</span>
+                    </div>
+                </div>
+                
+                <div class="card border bg-light rounded-4 p-3 mb-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fab fa-cc-mastercard fa-2x text-danger"></i>
+                            <div>
+                                <h6 class="fw-bold mb-0">Mastercard ending in 8899</h6>
+                                <small class="text-muted">Expires 05/27</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-custom-outline w-100 rounded-pill fw-bold mt-2" onclick="window.location.href='../404.html'">Manage Methods</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h5 class="fw-bold mb-0">Transaction History</h5>
+            <button class="btn btn-custom-secondary rounded-pill px-3 shadow-sm border" onclick="window.location.href='../404.html'"><i class="fas fa-download me-2"></i> Export</button>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th class="text-muted small text-uppercase fw-bold border-0 rounded-start">Invoice ID</th>
+                        <th class="text-muted small text-uppercase fw-bold border-0">Date</th>
+                        <th class="text-muted small text-uppercase fw-bold border-0">Service Description</th>
+                        <th class="text-muted small text-uppercase fw-bold border-0">Payment Method</th>
+                        <th class="text-muted small text-uppercase fw-bold border-0 text-end rounded-end">Amount</th>
+                    </tr>
+                </thead>
+                <tbody class="border-top-0">
+                    <tr>
+                        <td class="fw-bold text-primary">#INV-2099</td>
+                        <td>Sep 10, 2026</td>
+                        <td>Brake Pad Replacement (F-150)</td>
+                        <td><i class="fab fa-cc-visa text-primary me-2"></i> **** 4242</td>
+                        <td class="text-end fw-bold">$210.00</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold text-primary">#INV-1943</td>
+                        <td>Aug 22, 2026</td>
+                        <td>Standard Wash & Vacuum (Camry)</td>
+                        <td><i class="fab fa-cc-visa text-primary me-2"></i> **** 4242</td>
+                        <td class="text-end fw-bold">$45.00</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold text-primary">#INV-1822</td>
+                        <td>Jul 05, 2026</td>
+                        <td>Tire Rotation & Balance (F-150)</td>
+                        <td><i class="fab fa-cc-mastercard text-danger me-2"></i> **** 8899</td>
+                        <td class="text-end fw-bold">$85.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var options = {
+                series: [{ name: 'Expenses', data: [45, 0, 85, 0, 45, 210] }],
+                chart: { type: 'bar', height: 250, toolbar: { show: false }, fontFamily: 'Plus Jakarta Sans, sans-serif' },
+                colors: ['#10b981'],
+                plotOptions: { bar: { borderRadius: 6, columnWidth: '40%' } },
+                dataLabels: { enabled: false },
+                xaxis: { categories: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'], axisBorder: { show: false } },
+                yaxis: { labels: { formatter: function (val) { return "$" + val; } } },
+                grid: { borderColor: '#f1f5f9', strokeDashArray: 4 }
+            };
+            var chart = new ApexCharts(document.querySelector("#expenseChart"), options);
+            chart.render();
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+</html>
