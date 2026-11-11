@@ -295,10 +295,15 @@ function initContactForm() {
     const subjectError = document.getElementById('contactSubjectError');
     const messageError = document.getElementById('contactMessageError');
 
-    // Real-time restriction: Name takes ONLY alphabets and spaces, max 16 characters
+    // Real-time restriction: Name takes ONLY alphabets, NO spaces, max 16 characters
     if (contactName) {
+        contactName.addEventListener('keydown', function (e) {
+            if (e.key === ' ' || e.code === 'Space') {
+                e.preventDefault();
+            }
+        });
         contactName.addEventListener('input', function () {
-            this.value = this.value.replace(/[^A-Za-z ]/g, '').slice(0, 16);
+            this.value = this.value.replace(/[^A-Za-z]/g, '').slice(0, 16);
             clearError(this, nameError);
         });
     }
@@ -342,13 +347,13 @@ function initContactForm() {
         let isValid = true;
         let firstInvalid = null;
 
-        // 1. Validate Name: Mandatory, alphabets + spaces only, 1-16 chars
-        const nameVal = contactName ? contactName.value.trim() : '';
-        const namePattern = /^[A-Za-z ]{1,16}$/;
+        // 1. Validate Name: Mandatory, alphabets only, NO spaces, 1-16 chars
+        const nameVal = contactName ? contactName.value : '';
+        const namePattern = /^[A-Za-z]{1,16}$/;
         if (!nameVal || !namePattern.test(nameVal)) {
             isValid = false;
             if (!firstInvalid) firstInvalid = contactName;
-            setFieldError(contactName, nameError, 'Name is mandatory and must contain only alphabets and spaces (maximum 16 characters).');
+            setFieldError(contactName, nameError, 'Name is mandatory and must contain only alphabets with no spaces (maximum 16 characters).');
         } else {
             clearError(contactName, nameError);
         }

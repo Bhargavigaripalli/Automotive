@@ -130,15 +130,15 @@
                     <div class="bg-white p-4 p-md-5 rounded-4 shadow-lg border" style="border-color: rgba(0,0,0,0.05) !important;">
                         <form id="contactForm" novalidate>
                             <div class="row g-4">
-                                <!-- Name: Alphabets and spaces only, max 16 characters, mandatory -->
+                                <!-- Name: Alphabets only, no spaces, max 16 characters, mandatory -->
                                 <div class="col-md-6">
                                     <label for="contactName" class="form-label fw-bold small text-muted text-uppercase mb-1">
                                         Full Name <span class="text-danger">*</span>
                                     </label>
                                     <div class="bg-light p-2 rounded-4 contact-field-box" style="border: 1px solid rgba(0,0,0,0.08); transition: border-color 0.2s ease;">
-                                        <input type="text" id="contactName" name="name" class="form-control border-0 px-3 py-2 bg-transparent" placeholder="Alphabets only (max 16 chars)" maxlength="16" required autocomplete="name" style="box-shadow: none !important; font-size: 1.05rem;">
+                                        <input type="text" id="contactName" name="name" class="form-control border-0 px-3 py-2 bg-transparent" placeholder="Alphabets only, no spaces (max 16 chars)" maxlength="16" required autocomplete="name" style="box-shadow: none !important; font-size: 1.05rem;">
                                     </div>
-                                    <div id="contactNameError" class="text-danger small mt-1 ps-2 fw-semibold" style="display: none;">Name must contain only alphabets and spaces (maximum 16 characters).</div>
+                                    <div id="contactNameError" class="text-danger small mt-1 ps-2 fw-semibold" style="display: none;">Name must contain only alphabets with no spaces (maximum 16 characters).</div>
                                 </div>
 
                                 <!-- Phone: Numbers only, max 10 digits, mandatory -->
@@ -379,7 +379,17 @@
         </div>
     </section>
 
-    <!-- Section 10: Footer -->
+        <!-- Floating HUD Scroll Speed Badge & Back to Top Rocket Car -->
+    <div id="floatingHudSpeed" class="floating-hud-speed d-none d-md-flex">
+        <span class="speed-dial-indicator"></span>
+        <span>SCROLL SPEED: <span id="hudScrollSpeedVal" class="text-cyan fw-bold">0</span> MPH</span>
+    </div>
+
+    <button id="btnBackToTop" class="btn-back-to-top-car" title="Accelerate to Top">
+        <i class="fas fa-car-side"></i>
+    </button>
+
+<!-- Section 10: Footer -->
     <footer class="pt-5 pb-4 border-top" style="background: rgba(255, 255, 255, 0.9);">
     <div class="container pt-3">
         <div class="row g-4 mb-5">
